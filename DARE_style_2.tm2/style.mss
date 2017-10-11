@@ -12,6 +12,7 @@ Map {
   text-face-name: 'Source Sans Pro Semibold';
   text-fill:rgba(7, 7, 7, 0.99);
   text-halo-radius: 1.5;
+
   [zoom>=4] { text-size: 10; }
   [zoom<=6] { text-size: 12; }
   }
@@ -41,23 +42,100 @@ Map {
 
 //how the places should be named. 
 //makes the point of the place dissapear for the zoom the labels applies.
-#places[type='11'][zoom>=7] {
-      text-name: '[latin]';
-      text-size: 10;
-      text-face-name: 'Clan SC Offc Pro Extd Medium';
-      text-fill:rgba(7, 7, 7, 0.99);  
-      text-halo-radius: 1.5;
-    }
-
-    [type='12'][zoom>=10],
-    [type='13'][zoom>=10] {
-      text-name: '[latin]';
-      text-size: 11;
-      text-face-name: 'Clan Offc Pro Narrow News Italic';
-      text-fill:rgba(7, 7, 7, 0.99);  
-      text-halo-radius: 1.5;
-      [zoom>=12] { marker-width: 16; }
-    }
+#places {
+  [major=1][zoom>=7] {
+    text-name: '[latin]';
+    text-size: 10;
+    text-halo-radius: 1.5;
+    text-face-name: 'Roboto Bold';
+    text-fill:rgba(7, 7, 7, 0.70); 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: left;
+    text-dx: 8;
+    text-dy: 8;
+    text-placement-type: simple;
+    text-transform: uppercase;
+  }
+  [major=1][zoom>=10] {
+    text-name: '[latin]';
+    text-size: 12;
+    text-halo-radius: 1.5;
+    text-face-name: 'Roboto Bold';
+    text-fill:rgba(7, 7, 7, 0.70); 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: left;
+    text-dx: 8;
+    text-dy: 8;
+    text-placement-type: simple;
+    text-transform: uppercase;
+  }
+  [major=2][zoom>=8] {
+    text-name: '[latin]';
+    text-size: 10;
+    text-halo-radius: 1.5;
+    text-face-name: 'Roboto Bold';
+    text-fill:rgba(7, 7, 7, 0.70); 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: left;
+    text-dx: 8;
+    text-dy: 8;
+    text-placement-type: simple;
+  }
+   [major=3][zoom>=9] {
+    text-name: '[latin]';
+    text-size: 12;
+    text-halo-radius: 1.2;
+    text-face-name: 'Roboto Medium';
+    text-fill:brown; 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: left;
+    text-dx: 8;
+    text-dy: 8;
+    text-placement-type: simple;
+ }
+  [major=4][zoom>=9] {
+    text-name: '[latin]';
+    text-size: 12;
+    text-halo-radius: 1.2;
+    text-face-name: 'Roboto Medium';
+    text-fill:brown; 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: center;
+    text-dx: 10;
+    text-dy: 10;
+    text-placement-type: simple;
+  }
+  [major=0][zoom>=8] {
+    text-name: '[latin]';
+    text-size: 10;
+    text-halo-radius: 1.2;
+    text-face-name: 'Roboto Medium';
+    text-fill:rgba(7, 7, 7, 0.70); 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: left;
+    text-dx: 8;
+    text-dy: 8;
+    text-placement-type: simple;
+  }
+  [latin=''][zoom>=10] {
+    text-name: '[modern]';
+    text-size: 10;
+    text-halo-radius: 1.2;
+    text-face-name: 'Roboto Italic';
+    text-fill:rgba(7, 7, 7, 0.70); 
+    text-placement: point;
+    text-vertical-alignment: auto;
+    text-align: left;
+    text-dx: 8;
+    text-dy: 8;
+    text-placement-type: simple;
+  }
     
     //road or costal station label 
     [type='16'][zoom>=10] {
@@ -69,6 +147,8 @@ Map {
       text-dy: 3;
       text-dx: 3;
     }
+
+ }
 //when we find out how to display both symbol and label we add the 
 //other "place-label-definitions" here. 
   
@@ -108,7 +188,8 @@ Map {
     marker-height: 13;
     [zoom<=9] { marker-width: 5; marker-height: 6;}
   }
-  
+
+
   [type='12'][zoom>=8],
   [type='13'][zoom>=8] {
     marker-line-color: rgb(12, 3, 2);
